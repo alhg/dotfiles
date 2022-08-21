@@ -1,0 +1,22 @@
+XTerm.vt100.locale: false
+XTerm.vt100.utf8: true
+XTerm.vt100.scrollTtyOutput: false
+XTerm.vt100.scrollKey: true
+XTerm.vt120.scrollBar: true
+XTerm.vt100.bellIsUrgent: true
+XTerm.vt100.metaSendsEscape: true
+! Assume window titles are UTF-8 encoded
+XTerm.VT100.utf8Title: true
+
+! Styling
+XTerm.vt100.faceName: Go Mono
+XTerm.vt100.faceSize: 14
+XTerm.vt100.internalBorder: 8
+XTerm.vt100.background: black
+XTerm.vt100.foreground: lightgrey
+
+! turns off backspace sending ^H, which makes emacs opens help menu
+XTerm.vt100.backarrowKey: false
+
+! enable OSC 52, which allows clipboard to be used with tmux
+XTerm*disallowedWindowOps: 20,21,SetXprop
