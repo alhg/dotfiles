@@ -4,6 +4,7 @@ XTerm.vt100.scrollTtyOutput: false
 XTerm.vt100.scrollKey: true
 XTerm.vt120.scrollBar: true
 XTerm.vt100.bellIsUrgent: true
+XTerm.vt100.visualBell: true
 XTerm.vt100.metaSendsEscape: true
 ! Assume window titles are UTF-8 encoded
 XTerm.VT100.utf8Title: true
