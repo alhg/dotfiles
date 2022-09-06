@@ -12,5 +12,12 @@ return require("packer").startup(function()
     use 'ThePrimeagen/harpoon'
 
     use 'neovim/nvim-lspconfig'
+    use {
+        'ms-jpq/coq_nvim',
+        branch = 'coq',
+        requires = {
+            { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+        }
+    }
 end)
 

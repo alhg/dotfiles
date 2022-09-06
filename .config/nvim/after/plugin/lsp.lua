@@ -1,3 +1,4 @@
+local coq = require('coq')
 local Remap = require('alhg.keymap')
 local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
@@ -14,6 +15,8 @@ local on_attach = function()
     inoremap("<C-h>", function() vim.lsp.buf.signature_help() end)
 end
 
-require('lspconfig')['tsserver'].setup{
+require('lspconfig')['tsserver'].setup(coq.lsp_ensure_capabilities({
     on_attach = on_attach
-}
+}))
+require('lspconfig')['eslint'].setup(coq.lsp_ensure_capabilities({}))
+
