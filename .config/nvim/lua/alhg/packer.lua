@@ -2,6 +2,13 @@ vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(function()
     use 'wbthomason/packer.nvim'
+    use 'sbdchd/neoformat'
+    use {
+        'folke/which-key.nvim',
+        config = function()
+            require("which-key").setup {}
+        end
+    }
 
     -- color schemes
     use 'folke/tokyonight.nvim'
