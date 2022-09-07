@@ -5,7 +5,7 @@ local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
 local nmap = Remap.nmap
 
-nnoremap("<leader>pv", "<cmd>Ex<CR>", { desc = "Open netrw in current directory." })
+nnoremap("<leader>pv", "<cmd>Ex<CR>", { desc = "Open netrw in current directory" })
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 
@@ -16,5 +16,5 @@ xnoremap("<leader>p", "\"_dP")
 
 nnoremap("<leader>f", function()
     vim.lsp.buf.format()
-end, { desc = "LSP format current buffer." })
+end, { desc = "LSP format current buffer" })
 
