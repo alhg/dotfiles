@@ -15,8 +15,16 @@ local on_attach = function()
     inoremap("<C-h>", function() vim.lsp.buf.signature_help() end)
 end
 
-require('lspconfig')['tsserver'].setup(coq.lsp_ensure_capabilities({
+require('lspconfig').gopls.setup(coq.lsp_ensure_capabilities({
     on_attach = on_attach
 }))
-require('lspconfig')['eslint'].setup(coq.lsp_ensure_capabilities({}))
+require('lspconfig').rust_analyzer.setup(coq.lsp_ensure_capabilities({
+    on_attach = on_attach
+}))
+
+-- Web Development
+require('lspconfig').eslint.setup(coq.lsp_ensure_capabilities({}))
+require('lspconfig').tsserver.setup(coq.lsp_ensure_capabilities({
+    on_attach = on_attach
+}))
 
