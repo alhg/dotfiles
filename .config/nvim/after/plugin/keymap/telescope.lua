@@ -2,7 +2,7 @@ local Remap = require("alhg.keymap")
 local nnoremap = Remap.nnoremap
 
 -- Telescope shortcuts <C-p> or <leader>p<key>
-nnoremap("<C-p>", ":Telescope")
+nnoremap("<C-p>", ":Telescope", { desc =  "Open Telescope" })
 nnoremap("<leader>ps", function()
     require('telescope.builtin').grep_string({ search = vim.fn.input("Grep for > ") })
 end, { desc = 'Telescope grep string' })
@@ -29,4 +29,3 @@ end, { desc = 'Telescope git branches' })
 nnoremap("<leader>gw", function()
     require('telescope').extensions.git_worktree.git_worktrees()
 end, { desc = 'Telescope git worktrees' })
-

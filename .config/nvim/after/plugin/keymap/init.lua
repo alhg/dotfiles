@@ -6,15 +6,14 @@ local xnoremap = Remap.xnoremap
 local nmap = Remap.nmap
 
 nnoremap("<leader>pv", "<cmd>Ex<CR>", { desc = "Open netrw in current directory" })
-nnoremap("<C-d>", "<C-d>zz")
-nnoremap("<C-u>", "<C-u>zz")
+nnoremap("<C-d>", "<C-d>zz", { desc = "<C-d> with zz" })
+nnoremap("<C-u>", "<C-u>zz", { desc = "<C-u> with zz" })
 
 vnoremap("J", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down"})
 vnoremap("K", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up"})
 
 xnoremap("<leader>p", "\"_dP")
 
-nnoremap("<leader>f", function()
-    vim.lsp.buf.format()
-end, { desc = "LSP format current buffer" })
-
+nnoremap("<leader>f", function() vim.lsp.buf.format() end, {
+    desc = "LSP format current buffer"
+})
