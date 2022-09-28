@@ -1,1 +1,3 @@
-vim.cmd(':COQnow -s')
+-- local vim.g.coq_settings = {
+--    auto_start: true,
+-- }

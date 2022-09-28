@@ -6,7 +6,7 @@ return require("packer").startup(function()
     use {
         'folke/which-key.nvim',
         config = function()
-            require("which-key").setup {}
+            require("which-key").setup({})
         end
     }
 
@@ -20,14 +20,28 @@ return require("packer").startup(function()
     use 'ThePrimeagen/git-worktree.nvim'
     use 'ThePrimeagen/harpoon'
 
-    use 'neovim/nvim-lspconfig'
-    use {
-        'ms-jpq/coq_nvim',
-        branch = 'coq',
-        requires = {
-            { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
-        }
-    }
+    -- code syntax & language servers
+    use 'neovim/nvim-lspconfig' -- premade lsp configs to use with built-in lsp
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/nvim-cmp'
+    use 'onsails/lspkind.nvim' -- shows vscode symbols in cmp
+    use 'glepnir/lspsaga.nvim' -- what does this add to lsp??
+    -- snippit engine, required for nvim-cmp
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+
+    -- use {
+    --    'ms-jpq/coq_nvim',
+    --    branch = 'coq',
+    --    requires = {
+    --        { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+    --    }
+    -- }
+    -- use {
+    --    'nvim-treesitter/nvim-treesitter',
+    --    { run = ":TSUpdate" }
+    -- }
 
     use 'mbbill/undotree'
 end)
