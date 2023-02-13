@@ -1,48 +1,49 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(function()
-    use 'wbthomason/packer.nvim'
-    use 'sbdchd/neoformat'
+    use('wbthomason/packer.nvim')
+
+    use({
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    })
+
     use {
-        'folke/which-key.nvim',
+        'rose-pine/neovim',
+        as = 'rose-pine',
         config = function()
-            require("which-key").setup({})
+            vim.cmd('colorscheme rose-pine')
         end
     }
 
-    -- color schemes
-    use 'folke/tokyonight.nvim'
-    use 'gruvbox-community/gruvbox'
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('nvim-treesitter/playground')
+    use('theprimeagen/harpoon')
+    use('mbbill/undotree')
+    use('tpope/vim-fugitive')
 
-    use 'nvim-lua/plenary.nvim'
-    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = 'nvim-lua/plenary.nvim' }
-    use 'ThePrimeagen/git-worktree.nvim'
-    use 'ThePrimeagen/harpoon'
+    use({
+        'VonHeikemen/lsp-zero.nvim',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
 
-    -- code syntax & language servers
-    use 'neovim/nvim-lspconfig' -- premade lsp configs to use with built-in lsp
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/nvim-cmp'
-    use 'onsails/lspkind.nvim' -- shows vscode symbols in cmp
-    use 'glepnir/lspsaga.nvim' -- what does this add to lsp??
-    -- snippit engine, required for nvim-cmp
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
 
-    -- use {
-    --    'ms-jpq/coq_nvim',
-    --    branch = 'coq',
-    --    requires = {
-    --        { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
-    --    }
-    -- }
-    -- use {
-    --    'nvim-treesitter/nvim-treesitter',
-    --    { run = ":TSUpdate" }
-    -- }
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
+        }
+    })
 
-    use 'mbbill/undotree'
+    use('folke/zen-mode.nvim')
 end)
 
