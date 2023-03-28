@@ -1,5 +1,3 @@
-vim.opt.guicursor = ""
-
 -- relavtive numbers promote <number><hjkl> usage
 vim.opt.number = true
 vim.opt.relativenumber = true
