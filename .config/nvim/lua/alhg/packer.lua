@@ -1,6 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
 
-return require("packer").startup(function()
+return require("packer").startup(function(use)
     use('wbthomason/packer.nvim')
 
     use({
@@ -8,13 +8,13 @@ return require("packer").startup(function()
         requires = { {'nvim-lua/plenary.nvim'} }
     })
 
-    use {
-        'rose-pine/neovim',
-        as = 'rose-pine',
+    use({ 'rose-pine/neovim' })
+    use({
+        'folke/tokyonight.nvim',
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            vim.cmd('colorscheme tokyonight-night')
         end
-    }
+    })
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
