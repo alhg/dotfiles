@@ -32,4 +32,9 @@ vim.opt.updatetime = 50
 -- Add line column. format: "80,100,120"
 vim.opt.colorcolumn = "80"
 
+-- Always copy/paste to/from clipboard register (either "*", or "+")
+-- "unnamed" uses "*" register
+-- "unnamedplus" uses "+" register
+vim.opt.clipboard = "unnamedplus"
+
 vim.g.mapleader = " "
