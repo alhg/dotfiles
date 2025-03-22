@@ -1,4 +1,4 @@
-Welcome to my dofiles.
+Welcome to my dotfiles.
 
 TODOs:
 - Update tmux keybindings to work better on macOS
