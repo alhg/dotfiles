@@ -2,6 +2,11 @@ vim.lsp.enable('lua_ls')
 vim.lsp.enable('clangd')
 vim.lsp.enable('rust-analyzer')
 
+-- webdev stuff
+vim.lsp.enable('ts_ls') -- typescript
+vim.lsp.enable('eslint')
+vim.lsp.enable('angularls')
+
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
