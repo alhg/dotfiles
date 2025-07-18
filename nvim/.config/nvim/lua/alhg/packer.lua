@@ -1,7 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(function(use)
-    use('wbthomason/packer.nvim')
+    use({'wbthomason/packer.nvim'})
 
     use({
         'nvim-telescope/telescope.nvim',
@@ -14,7 +14,7 @@ return require("packer").startup(function(use)
 
     use({'neovim/nvim-lspconfig'})
     use({
-        'williamboman/mason.nvim',
+        'mason-org/mason.nvim',
         config = function() require('mason').setup() end
     })
 
