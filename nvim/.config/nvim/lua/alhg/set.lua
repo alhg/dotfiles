@@ -38,3 +38,13 @@ vim.opt.colorcolumn = "80"
 vim.opt.clipboard = "unnamedplus"
 
 vim.g.mapleader = " "
+
+-- Diagnostics configuration
+vim.diagnostic.config({
+  jump = {
+    float = true
+  },
+  virtual_text = true
+})
+vim.o.winborder = 'rounded'
+
